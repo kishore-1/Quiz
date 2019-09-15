@@ -49,12 +49,6 @@ heading {
 	cursor: default;
 }
 
-/* .left,.right,.left-text,.right-text{
-	width:16%;
-	height:auto;
-	display: inline-block;
-} */
-
 .left, .right {
 	width: 16%;
 	height: auto;
@@ -87,16 +81,11 @@ img:active {
 	border-color: coral;
 }
 
-.left text:hover, .right text:hover {
+.left .link:hover, .right .link:hover {
 	transform: scale(1.05);
 }
 
-/* .left-text:hover , .right-text:hover{
-	font-size: 2.2vw;
-	box-sizing: border-box;
-} */
-
-.left text, .right text {
+.left .link, .right .link {
 	font-size: 1.7vw;
 	text-align: center;
 	margin-bottom: 1.5%;
@@ -154,7 +143,7 @@ footer {
 	width: 100%;
 }
 
-question {
+.ques {
 	display: block;
 	margin: 4% 0 1% 0;
 	font-weight: bold;
@@ -181,7 +170,7 @@ textarea:hover {
 	display: block;
 }
 
-#questions .head text {
+#questions .head .text {
 	font-size: 3.5vw;
 	font-weight: bold;
 	font-style: italic;
@@ -264,7 +253,7 @@ input[type="submit"]:active {
 	line-height: 1.27vw;
 }
 
-.evaluate {
+.evaluate, .homeDiv {
 	display: inline-block;
 	width: 50%;
 }
@@ -333,6 +322,15 @@ input[type="submit"]:active {
 	margin-top: 20%;
 }
 
+.overlay-trans {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
+
 .in {
 	margin-top: 0;
 }
@@ -341,7 +339,7 @@ input[type="submit"]:active {
 	margin-bottom: 1vw;
 }
 
-#evaluate {
+#evaluate, #homeButton {
 	vertical-align: super;
 	margin-left: 112%;
 	width: 34%;
@@ -373,7 +371,3 @@ input[type="submit"]:active {
 #back:hover, #next:hover {
 	color: brown;
 }
-
-/* #back:active, #next:active {
-	border: .5vw solid coral;
-} */
