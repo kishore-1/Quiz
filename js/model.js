@@ -44,6 +44,7 @@ let model = (function () {
         },
         answer: [],
         ans: ["No"],
+        mandatory: true,
     },
     {
         question: "2. Who is the developers of ReactJs?",
@@ -56,6 +57,7 @@ let model = (function () {
         },
         answer: [],
         ans: ["FaceBook"],
+        mandatory: true,
     },
     {
         question: "3. Name the java frameworks below?",
@@ -68,6 +70,7 @@ let model = (function () {
         },
         answer: [],
         ans: ["JSF", "Spring"],
+        mandatory: false,
     },
     {
         question: "4. WordPress is built using?",
@@ -80,6 +83,7 @@ let model = (function () {
         },
         answer: ["Python"],
         ans: ["PHP"],
+        mandatory: false,
     },
     {
         question: "5. Write  about your favoutite Coding language?",
@@ -89,7 +93,8 @@ let model = (function () {
             placeHolder: "Write here",
         },
         answer: [""],
-        ans: [10]
+        ans: [10],
+        mandatory: false,
     }
     ];
     let Movie = [{
@@ -103,6 +108,7 @@ let model = (function () {
         },
         answer: [],
         ans: ["J.Ravi"],
+        mandatory: true,
     },
     {
         question: "2. Who is the director of 2.0?",
@@ -115,6 +121,7 @@ let model = (function () {
         },
         answer: [],
         ans: ["Shankar"],
+        mandatory: false,
     },
     {
         question: "3. 50th movie of actor vijay?",
@@ -127,6 +134,7 @@ let model = (function () {
         },
         answer: ["Kathi"],
         ans: ["Sura"],
+        mandatory: false,
     },
     {
         question: "4. Select the movies linked with each other?",
@@ -139,6 +147,7 @@ let model = (function () {
         },
         answer: [],
         ans: ["Avatar", "Titanic"],
+        mandatory: true,
     },
     {
         question: "5. Write about your favoutite Kollywood personality?",
@@ -148,7 +157,8 @@ let model = (function () {
             placeHolder: "Write here",
         },
         answer: [""],
-        ans: [10]
+        ans: [10],
+        mandatory: false,
     }
     ];
     let Space = [{
@@ -162,6 +172,8 @@ let model = (function () {
         },
         answer: [],
         ans: ["Armstrong"],
+        mandatory: true,
+
     },
     {
         question: "2. NASA is a Government agency of?",
@@ -174,6 +186,7 @@ let model = (function () {
         },
         answer: [],
         ans: ["USA"],
+        mandatory: false,
     },
     {
         question: "3. Name the Aerospace companies?",
@@ -186,6 +199,7 @@ let model = (function () {
         },
         answer: [],
         ans: ["SpaceX", "Blue Origin"],
+        mandatory: true,
     },
     {
         question: "4. ISRO is a Indian agency?",
@@ -197,6 +211,7 @@ let model = (function () {
         },
         answer: ["Yes"],
         ans: ["Yes"],
+        mandatory: false,
     },
     {
         question: "5. Write about your favoutite Space Agency?",
@@ -206,7 +221,8 @@ let model = (function () {
             placeHolder: "Write here",
         },
         answer: [""],
-        ans: [10]
+        ans: [10],
+        mandatory: false,
     }
     ];
     let Sport = [{
@@ -220,6 +236,7 @@ let model = (function () {
         },
         answer: [],
         ans: ["Kholi"],
+        mandatory: false,
     },
     {
         question: "2. Who is the WC 2019 Winners?",
@@ -232,6 +249,7 @@ let model = (function () {
         },
         answer: [],
         ans: ["England"],
+        mandatory: true,
     },
     {
         question: "3. Name the Sports Persons below?",
@@ -244,6 +262,7 @@ let model = (function () {
         },
         answer: [],
         ans: ["Dhoni", "chhetri"],
+        mandatory: true,
     },
     {
         question: "4. Ronaldo plays for which club?",
@@ -256,6 +275,7 @@ let model = (function () {
         },
         answer: ["chelsea"],
         ans: ["Juventus"],
+        mandatory: false,
     },
     {
         question: "5. Write about your favoutite sports personality?",
@@ -265,18 +285,17 @@ let model = (function () {
             placeHolder: "Write here",
         },
         answer: [""],
-        ans: [10]
+        ans: [10],
+        mandatory: false,
     }
     ];
 
-    return function () {
-        return {
-            home,
-            Coding,
-            Movie,
-            Sport,
-            Space,
-        }
+    return {
+        home,
+        Coding,
+        Movie,
+        Sport,
+        Space,
     }
 
-})()();
+})();

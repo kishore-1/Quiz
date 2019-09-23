@@ -33,26 +33,24 @@ let view = (function () {
             let img = document.createElement("img");
             img.setAttribute("src", element.src);
             img.setAttribute("alt", element.alt);
-            img.addEventListener("click", function () {
-                view.build(element.name, element.ind);
-            });
             div.appendChild(img);
 
             let text = document.createElement("div");
             text.setAttribute("class", "link");
             text.innerHTML = element.name;
-            text.addEventListener("click", function () {
+            div.appendChild(text);
+
+            div.addEventListener("click", function () {
                 view.build(element.name, element.ind);
             });
-            div.appendChild(text);
             document.getElementById("questions").appendChild(div);
         });
 
     }
     function build(name) {
-        let ind = controller.reload[name]
-        controller.current.ind = ind;
-        controller.current.name = name;
+        let ind = controller.getReloadName(name);
+        controller.setCurrentInd(ind);
+        controller.setCurrentName(name);
         controller.deleteChild("#questions");
 
         let root = document.createElement("div");
@@ -101,7 +99,7 @@ let view = (function () {
             }
 
             option.addEventListener("input", debounce(function () {
-                let pos = model[controller.current.name][controller.current.ind];
+                let pos = model[controller.getCurrentName()][controller.getCurrentInd()];
                 pos.answer[0] = document.getElementsByName(pos.name)[0].value;
             }, 1000));
             root.appendChild(option);
@@ -174,7 +172,7 @@ let view = (function () {
             next.setAttribute("id", "result")
             next.setAttribute("value", "Evaluate");
             next.addEventListener("click", function () {
-                controller.reload[name] = 0;
+                controller.setReloadValue(name, 0);
                 controller.evaluation();
             });
         } else {
@@ -190,14 +188,12 @@ let view = (function () {
         document.getElementById("questions").appendChild(root);
     }
 
-    return function () {
-        return {
-            init: init,
-            home: home,
-            build,
-        }
+    return {
+        init: init,
+        home: home,
+        build,
     }
 
-})()();
+})();
 view.init();
 view.home();
